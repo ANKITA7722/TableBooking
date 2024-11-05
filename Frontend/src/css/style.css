@@ -10,7 +10,7 @@
 }
 .booking-form{
      max-width: 500px;
-     
+     text-align: start;     
      
 }
 h2 {
@@ -133,4 +133,86 @@ textarea {
   .cta.newbtn:hover {
     background-color: #0056b3;
   }
+  /* --------------------------------------------------------------------- */
+  .home1 {
+    background-color: black; /* Set background color */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Space elements evenly */
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center-align text */
+    padding: 20px;
+    flex-wrap: wrap; /* Wrap items for responsiveness */
+  }
+  
+  .div1 {
+    color: white; /* Set text color to white for headings */
+    max-width: 300px; /* Limit width for better layout */
+    margin: 15px; /* Add margin for spacing */
+  }
+  
+  .div1 p {
+    color: gray; /* Set paragraph color to gray */
+  }
+  /* ---------------------------------------------------------------------- */
+  .home2 {
+    background-color:antiquewhite; /* Set background color for the entire section */
+    text-align: center; /* Center-align text */
+    padding: 4px;
+    display: flex;
+    flex-wrap: wrap; /* Make items wrap for responsiveness */
+    justify-content: space-around; /* Space items around */
+    align-items: center;
+  }
+  .home2 .d1{
+    width: 100%;
+    border-radius: 2px;
+    padding: 20px;
+    background-color:antiquewhite;
+  }
+  
+  .home2 p {
+    font-size: 1.2em;
+    color:black;
+    margin-bottom: 5px;
+  }
+  
+  .home2 h1 {
+    font-size: 2em;
+    color: black;
+    margin-bottom: 20px;
+  }
+  .home2 div {
+    background-color:white;
+    margin: 6px;
+    border-radius: 10px;
+  }
+  .food-item {
+    background-color: white; /* Background color for each item */
+    width: 50px; /* Width for each item */
+    margin: 10px; /* Space between items */
+    text-align: center;
+    transition: transform 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .food-item:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+  }
+  
+  .food-item img {
+    width: 100%;
+    height: 100px; /* Fixed height for images */
+    object-fit: cover; /* Crop images to fit the box */
+  }
+  
+  .food-item h3 {
+    color: #333;
+    margin-top: 10px;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  .home2 div img{
+    width: 100%;
+    height: 300px;
+    padding: 50px;
+  }
+  
   
