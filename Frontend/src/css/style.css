@@ -193,7 +193,6 @@ textarea {
     text-align: center;
     transition: transform 0.3s ease; /* Transition for hover effect */
   }
-  
   .food-item:hover {
     transform: scale(1.05); /* Scale effect on hover */
   }
@@ -203,7 +202,6 @@ textarea {
     height: 100px; /* Fixed height for images */
     object-fit: cover; /* Crop images to fit the box */
   }
-  
   .food-item h3 {
     color: #333;
     margin-top: 10px;

@@ -6,7 +6,7 @@ const Display = () => {
   const [myData, setMyData] = useState([]);
 
   const loadData = async () => {
-    let api = "http://localhost:9000/users/userdisplay";
+    let api = "http://localhost:9000/Bookings/Bookingdisplay";
     try {
       const response = await axios.get(api);
       setMyData(response.data);
@@ -15,7 +15,6 @@ const Display = () => {
       alert(error.response.data);
     }
   };
-
   useEffect(() => {
     loadData();
   }, []);

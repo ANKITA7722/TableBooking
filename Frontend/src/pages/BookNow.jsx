@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from "axios";
+import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../css/style.css';
@@ -28,7 +28,7 @@ const BookNow = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); 
 
-    const api = "http://localhost:9000/users/usersave";
+    const api = "http://localhost:9000/Bookings/Bookingsave";
     try {
       const res = await axios.post(api, input);
       console.log(res);
@@ -52,19 +52,19 @@ const BookNow = () => {
   return (
     <>
       <section id="booking">
-        <h2>Table Booking</h2>
+        <h2>Book A Table</h2>
         <h3>Reserve Your Personal Table Now</h3>
-        <form id="bookingForm" onSubmit={handleSubmit} className="booking-form">
+        <form id="bookingForm"  className="booking-form">
           <div className="form-container">
             <div className="form-section">
               <h5>Personal Information</h5>
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="name"> Full Name:</label>
               <input type="text" id="name" name="name" value={input.name} onChange={handleInput} required />
 
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email">Email Address:</label>
               <input type="email" id="email" name="email" value={input.email} onChange={handleInput} required />
 
-              <label htmlFor="mobile">Mobile Number:</label>
+              <label htmlFor="mobile">Phone Number:</label>
               <input type="tel" id="mobile" name="mobile" value={input.mobile} onChange={handleInput} required />
             </div>
           </div>
@@ -86,14 +86,14 @@ const BookNow = () => {
             <label htmlFor="bookingTime">Booking Time:</label>
             <input type="time" id="bookingTime" name="bookingTime" value={input.bookingTime} onChange={handleInput} required />
 
-            <label htmlFor="guests">Number of Guests:</label>
+            <label htmlFor="guests">Total Person:</label>
             <input type="number" id="guests" name="guests" value={input.guests} onChange={handleInput} required min="1" />
 
             <label htmlFor="message">Message:</label>
             <textarea id="message" name="message" rows="3" value={input.message} onChange={handleInput} placeholder="Any additional requests..."></textarea>
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleSubmit}>Book A Table</button>
         </form>
       </section>
       <ToastContainer />

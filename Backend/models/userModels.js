@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const bookingSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true 
+        required: true
     },
     email: {
         type: String,
@@ -11,24 +11,24 @@ const userSchema = new mongoose.Schema({
     },
     mobile: {
         type: Number,
-        required: true 
-    },
-    roomType: {
-        type: String,
-        required: true 
-    },
-    checkIn: {
-        type: Date, 
         required: true
     },
-    checkOut: {
-        type: Date, 
+    tableType: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: Date,
+        required: true
+    },
+    time: {
+        type: String,
         required: true
     },
     message: {
         type: String,
-        required: true 
+        required: true
     }
 });
 
-module.exports = mongoose.model("User", userSchema); 
+module.exports = mongoose.model("Booking", bookingSchema);

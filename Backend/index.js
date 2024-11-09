@@ -14,7 +14,7 @@ app.use(cors());
 // body-parser middleware
 app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
-app.use("/users",userRoute);
+app.use("/Bookings",userRoute);
 
 app.listen(port,()=>{
     console.log(`Server run on ${port}`)

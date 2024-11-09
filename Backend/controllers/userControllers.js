@@ -1,42 +1,40 @@
-const userModel = require("../models/userModels");
+const bookingModel = require("../models/userModels");
 
-
-const userDataSave=async(req,res)=>{
-    // res.send("Data Save successfully ok!!")
-
-const {name, email, mobile,roomType,checkIn,checkOut,message}=req.body;
-try{
-    const User=await userModel.create({
-        name:name,
-        email:email,
-        mobile:mobile,
-        roomType:roomType,
-        checkIn:checkIn,
-        checkOut:checkOut,
-        message:message
-    })
-    console.log("data save!")
-    res.status(200).json(User);
-
-}
-catch(error){
-    res.status(404).json("MangoDB Server No Started!!!")
-}
-}
-
-const userDataDisplay=async(req,res)=>{
-    try{
-        const userdata=await userModel.find();
-        console.log("Data Successfully Display!!")
-        res.status(200).json(userdata)
+const bookingDataSave = async (req, res) => {
+    const { name, email, mobile, tableType, date, time, message } = req.body;
+    
+    try {
+        // Create the booking in the database
+        const Booking = await bookingModel.create({
+            name: name,
+            email: email,
+            mobile: mobile,
+            tableType: tableType,
+            date: date,
+            time: time,
+            message: message
+        });
+        
+        console.log("Booking data saved!");
+        // Send the success response
+        res.status(200).json(Booking);
+    } catch (error) {
+        // Send the error response
+        res.status(500).json({ error: "Failed to save booking data. Please try again." });
     }
-    catch(error){
-        res.status(404).json("Data from MongoDB not found!!")
+};
+
+const bookingDataDisplay = async (req, res) => {
+    try {
+        const bookingData = await bookingModel.find();
+        console.log("Booking data displayed successfully!");
+        res.status(200).json(bookingData);
+    } catch (error) {
+        res.status(404).json("Data from MongoDB not found!");
     }
-}
+};
 
-
-module.exports={
-    userDataSave,
-    userDataDisplay
-}
+module.exports = {
+    bookingDataSave,
+    bookingDataDisplay
+};
