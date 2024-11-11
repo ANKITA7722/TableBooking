@@ -26,13 +26,14 @@ const BookNow = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault(); // Prevent form from submitting normally
 
-    const api = "http://localhost:9000/Bookings/Bookingsave";
+    const api = "http://localhost:9000/bookings/save"; //
     try {
       const res = await axios.post(api, input);
       console.log(res);
       toast.success("Table booking successfully saved!");
+      
       setInput({
         name: '',
         email: '',
@@ -54,11 +55,11 @@ const BookNow = () => {
       <section id="booking">
         <h2>Book A Table</h2>
         <h3>Reserve Your Personal Table Now</h3>
-        <form id="bookingForm"  className="booking-form">
+        <form id="bookingForm" className="booking-form" onSubmit={handleSubmit}>
           <div className="form-container">
             <div className="form-section">
-              <h5>Personal Information</h5>
-              <label htmlFor="name"> Full Name:</label>
+              {/* <h5>Personal Information</h5> */}
+              <label htmlFor="name">Full Name:</label>
               <input type="text" id="name" name="name" value={input.name} onChange={handleInput} required />
 
               <label htmlFor="email">Email Address:</label>
@@ -70,7 +71,7 @@ const BookNow = () => {
           </div>
 
           <div className="form-section">
-            <h5>Booking Details</h5>
+            {/* <h5>Booking Details</h5> */}
             <label htmlFor="tableSize">Table Size:</label>
             <select id="tableSize" name="tableSize" value={input.tableSize} onChange={handleInput} required>
               <option value="">Select Table Size</option>
@@ -93,7 +94,7 @@ const BookNow = () => {
             <textarea id="message" name="message" rows="3" value={input.message} onChange={handleInput} placeholder="Any additional requests..."></textarea>
           </div>
 
-          <button type="submit" onClick={handleSubmit}>Book A Table</button>
+          <button type="submit">Book A Table</button>
         </form>
       </section>
       <ToastContainer />

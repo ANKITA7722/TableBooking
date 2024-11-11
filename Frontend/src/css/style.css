@@ -145,17 +145,17 @@ textarea {
   }
   
   .div1 {
-    color: white; /* Set text color to white for headings */
-    max-width: 300px; /* Limit width for better layout */
+    color: white; 
+    max-width: 300px; 
     margin: 15px; /* Add margin for spacing */
   }
   
   .div1 p {
-    color: gray; /* Set paragraph color to gray */
+    color: rgb(237, 121, 5);
   }
   /* ---------------------------------------------------------------------- */
   .home2 {
-    background-color:antiquewhite; /* Set background color for the entire section */
+    background-color:white; /* Set background color for the entire section */
     text-align: center; /* Center-align text */
     padding: 4px;
     display: flex;
@@ -167,7 +167,8 @@ textarea {
     width: 100%;
     border-radius: 2px;
     padding: 20px;
-    background-color:antiquewhite;
+    /* background-color:antiquewhite; */
+    background-color:white;
   }
   
   .home2 p {
@@ -182,7 +183,7 @@ textarea {
     margin-bottom: 20px;
   }
   .home2 div {
-    background-color:white;
+    background-color:antiquewhite;
     margin: 6px;
     border-radius: 10px;
   }
@@ -212,5 +213,169 @@ textarea {
     height: 300px;
     padding: 50px;
   }
+  /* ------------------------------- */
+ #booking h2{
+ color: rgb(237, 121, 5);
+ }
+  /* --------------------- */
+  .footer {
+    background-color: black;
+    color: rgb(237, 121, 5);
+    padding: 20px;
+  }
   
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   
+  .footer-social {
+    flex: 1;
+    min-width: 200px;
+    margin-right: 100px;
+    text-align: center;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .icon:hover {
+    color: gray;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  h2 {
+    color: rgb(237, 121, 5);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  hr {
+    height: 1px;
+    background-color: white;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: gray;
+    margin: 5px 0;
+    font-size: 16px; /* Increased the font size from 14px to 16px */
+    font-size: large;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-section, .footer-social {
+      text-align: center;
+    }
+  }
+  .icon {
+    margin-right: 8px; /* Add space between the icon and the text */
+    color: white; /* Icon color */
+    font-size: 16px; /* Adjust the icon size */
+    vertical-align: middle; /* Align the icon with the text */
+    font-size:large;
+    /* background-color:  rgb(237, 121, 5); */
+    
+  }
+  
+  /* =============================================== */
+  #services {
+    /* background-color: #1a1a1a; Dark background color */
+    color: white; /* White text for good contrast */
+    padding: 40px 20px; /* Add padding for spacing */
+    text-align: center; /* Center align text */
+    margin-top: 20px;
+  }
+  
+  h2 {
+    color: #ff8c00; /* A striking color for the main heading */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the service cards */
+    gap: 20px; /* Space between the service cards */
+  }
+  
+  .service {
+    background-color: #2b2b2b; /* Slightly lighter dark background for the service cards */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing for the cards */
+    width: 300px; /* Fixed width for uniform card size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    transition: transform 0.3s; /* Smooth hover effect */
+  }
+  
+  .service:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  
+  img {
+    width: 100%;
+    border-radius: 5px;
+    height: 300px;
+    object-fit: cover; /* Ensure the image fills the container */
+  }
+  
+  h3 {
+    color: #ff8c00; /* Matching color for subheadings */
+    margin-top: 15px; /* Space above subheadings */
+  }
+  
+  p {
+    color: #d3d3d3; /* Lighter text color for readability */
+    margin-top: 10px; /* Space above paragraphs */
+  }
+  
+  .cta.newbtn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #1a1a1a; /* Dark text on the button */
+    background-color: #ff8c00; /* Bright button color */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .cta.newbtn:hover {
+    background-color: #e07b00; /* Darker shade on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .services-container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center; /* Center items */
+    }
+  
+    .service {
+      max-width: 90%; /* Reduce the width on smaller screens */
+    }
+  }
+ 

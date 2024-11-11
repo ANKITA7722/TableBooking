@@ -1,55 +1,63 @@
+import React from "react";
+import '../css/style.css';
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTwitter } from 'react-icons/fa'; 
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'; 
+
 const Footer = () => {
-    return (
-      <>
-        <footer className="footer">
-          <div className="container">
-            <p>&copy; 2024 SheyRooms Hotel Pvt Ltd. All Rights Reserved.</p>
-{/*                */}
-            <p>
-              <a href="mailto:info@company.com">info@sheyrooms.com</a> | 
-              <a href="https://www.company.com" target="_blank" rel="noreferrer"> www.sheyrooms.com</a>
+  return (
+    <>
+      <footer className="footer">
+        <div className="container">
+          {/* Social Media Section */}
+          <div className="footer-social">
+            <h2>Follow Us</h2>
+            <p>We believe that great food shouldn't break the bank.
+              That's why we offer affordable options without compromising on taste.
+
             </p>
+            <div className="icons">
+              <FaFacebookF className="icon" />
+              <FaInstagram className="icon" />
+              <FaWhatsapp className="icon" />
+              <FaTwitter className="icon" />
+            </div>
+
           </div>
-        </footer>
-  
-        <style jsx>{`
-          .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 5px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000; /* Ensures it stays above other elements */
-          }
-  
-          .footer p {
-            margin: 5px 0;
-            font-size: 1rem;
-          }
-  
-          .footer a {
-            color: #ffc107;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-          }
-  
-          .footer a:hover {
-            color: #fff;
-          }
-  
-          @media screen and (max-width: 768px) {
-            .footer {
-              font-size: 0.9rem;
-            }
-          }
-        `}</style>
-      </>
-    );
-  };
-  
-  export default Footer;
-  
+
+          {/* Quick Links Section */}
+          <div className="footer-section">
+            <h2>Quick Links</h2>
+            <hr size="5" color="red" />
+            <p>About Us</p>
+            <p>Our Chefs</p>
+            <p>Company History</p>
+            <p>Our Gallery</p>
+            <p>Need a Career?</p>
+          </div>
+
+          {/* Food Menu Section */}
+          <div className="footer-section">
+            <h2>Food Menu</h2>
+            <hr size="5" color="red" />
+            <p>Red Dish Oysters</p>
+            <p>Crispy Chicken</p>
+            <p>Wild Mushroom</p>
+            <p>Kazo Sushi Platter</p>
+            <p>Breakfast Platter</p>
+          </div>
+
+          {/* Get In Touch Section */}
+          <div className="footer-section">
+          <h2>Get In Touch</h2>
+          <hr size="5" color="red" />
+          <p><FaMapMarkerAlt className="icon" /> Address Location</p>
+          <p><FaPhoneAlt className="icon" /> Phone Number</p>
+          <p><FaEnvelope className="icon" /> Email Address</p>
+        </div>
+        </div>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;

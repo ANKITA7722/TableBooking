@@ -16,7 +16,7 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/service">Service</Nav.Link>
-            <Nav.Link as={Link} to="/booknow">Book Now</Nav.Link>
+           <Nav.Link as={Link} to="/booknow">Book Now</Nav.Link>
             <Nav.Link as={Link} to="/display">Display</Nav.Link>
             <Nav.Link as={Link} to="/update">Update</Nav.Link>
             <Nav.Link as={Link} to="/contactus">Contact Us</Nav.Link>
@@ -31,8 +31,8 @@ const Header = () => {
               />
               {/* <Button variant="outline-light" type="submit">Search</Button> */}
             </Form>
-            <Button variant="outline-light" href="#login" className="me-2">Login</Button>
-            <Button variant="outline-light" href="#signup">Signup</Button>
+            {/* <Button variant="outline-light" href="#login" className="me-2">Login</Button>
+            <Button variant="outline-light" href="#signup">Signup</Button> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

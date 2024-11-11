@@ -11,7 +11,7 @@ const Layout=()=>{
         <center>
             <Outlet/>
         </center>
-        
+        <Footer/>
         </>
     )
 }

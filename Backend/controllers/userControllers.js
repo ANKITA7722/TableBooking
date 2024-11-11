@@ -4,7 +4,6 @@ const bookingDataSave = async (req, res) => {
     const { name, email, mobile, tableType, date, time, message } = req.body;
     
     try {
-        // Create the booking in the database
         const Booking = await bookingModel.create({
             name: name,
             email: email,

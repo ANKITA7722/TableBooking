@@ -105,12 +105,53 @@ const Home = () => {
           <p>OUR MENU</p>
           <h1>Our Popular Food Items</h1>
         </div>
-        {[d, e, f, g, h, i, j, k].map((image, index) => (
+        {/* {[d, e, f, g, h, i, j, k].map((image, index) => (
           <div className={`d${index + 2}`} key={index}>
             <img src={image} alt={`Food item ${index + 1}`} />
             <h3>{`Food Item ${index + 1}`}</h3>
           </div>
-        ))}
+        ))} */}
+        <div>
+          <img src={d}/>
+          <h4>Egg And Cocumber</h4>
+          <p>Rs.....</p>
+        </div>
+        <div>
+          <img src={e}/>
+          <h4>Chicken Fried Rice</h4>
+          <p>Rs.....</p>
+        </div>
+        <div>
+          <img src={f}/>
+          <h4>Breakfast Platter</h4>
+          <p>Rs.....</p>
+        </div>
+        <div>
+          <img src={g}/>
+          <h4>Butter Pasta</h4>
+          <p>Rs.....</p>
+        </div>
+        <div>
+          <img src={h}/>
+          <h4>Grilled Chicken</h4>
+          <p>Rs.....</p>
+        </div>
+        <div>
+          <img src={i}/>
+          <h4>Kozo Sushi Platter</h4>
+          <p>Rs.....</p>
+        </div>
+        <div>
+          <img src={j}/>
+          <h4>Chicken With Rice</h4>
+          <p>Rs.....</p>
+          
+        </div>
+        <div>
+          <img src={k}/>
+          <h4>Chicken Leg Piece</h4>
+          <p>Rs.....</p>
+        </div>
       </div>
 
       <section id="booking">
