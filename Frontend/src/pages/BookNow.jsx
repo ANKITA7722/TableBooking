@@ -5,48 +5,28 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../css/style.css';
 
 const BookNow = () => {
-  const [input, setInput] = useState({
-    name: '',
-    email: '',
-    mobile: '',
-    tableSize: '',
-    bookingDate: '',
-    bookingTime: '',
-    guests: '',
-    message: ''
-  });
+  // Initialize all state values
+  const [input, setInput] = useState({});
 
+  // Handle input changes
   const handleInput = (e) => {
     const { name, value } = e.target;
-    setInput(prevInput => ({
-      ...prevInput,
-      [name]: value
-    }));
-    console.log(input);
+    setInput((values) => ({ ...values, [name]: value }));
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent form from submitting normally
+    e.preventDefault();
+    const api = "http://localhost:9000/bookings/bookingsave";
 
-    const api = "http://localhost:9000/bookings/save"; //
     try {
       const res = await axios.post(api, input);
       console.log(res);
-      toast.success("Table booking successfully saved!");
-      
-      setInput({
-        name: '',
-        email: '',
-        mobile: '',
-        tableSize: '',
-        bookingDate: '',
-        bookingTime: '',
-        guests: '',
-        message: ''
-      });
+      toast.success("Data Successfully Saved");
+      setInput({});
     } catch (err) {
       console.error(err);
-      toast.error("Error saving booking. Please try again.");
+      alert(err.response?.data || "An error occurred");
     }
   };
 
@@ -58,7 +38,6 @@ const BookNow = () => {
         <form id="bookingForm" className="booking-form" onSubmit={handleSubmit}>
           <div className="form-container">
             <div className="form-section">
-              {/* <h5>Personal Information</h5> */}
               <label htmlFor="name">Full Name:</label>
               <input type="text" id="name" name="name" value={input.name} onChange={handleInput} required />
 
@@ -71,7 +50,6 @@ const BookNow = () => {
           </div>
 
           <div className="form-section">
-            {/* <h5>Booking Details</h5> */}
             <label htmlFor="tableSize">Table Size:</label>
             <select id="tableSize" name="tableSize" value={input.tableSize} onChange={handleInput} required>
               <option value="">Select Table Size</option>
@@ -94,12 +72,12 @@ const BookNow = () => {
             <textarea id="message" name="message" rows="3" value={input.message} onChange={handleInput} placeholder="Any additional requests..."></textarea>
           </div>
 
-          <button type="submit">Book A Table</button>
+          <button type="submit" onClick={handleSubmit}>Book A Table</button>
         </form>
       </section>
       <ToastContainer />
     </>
   );
-}
+};
 
 export default BookNow;

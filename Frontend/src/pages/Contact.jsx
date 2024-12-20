@@ -2,23 +2,11 @@ import React, { useState } from 'react';
 // import './BookNow.css'; // Ensure you import your CSS file
 import { ToastContainer, toast } from 'react-toastify';
 const BookNow = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        mobile: '',
-        tableType: '',
-        bookingDate: '',
-        bookingTime: '',
-        guests: '',
-        message: '',
-    });
+    const [formData, setFormData] = useState({});
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
+        setFormData((prevData) => ({...prevData,[name]: value, }));
     };
 
     const handleSubmit = (e) => {

@@ -1,21 +1,31 @@
-const express=require("express");
-const app=express();
-const bodyparser=require("body-parser");
-const cors=require("cors");
-const mongoose=require("mongoose");
-require('dotenv').config();
-const userRoute=require("./routes/userRoutes");
-mongoose.connect(process.env.DBCONNECTION).then(()=>{
-    console.log("DB Successfully Connected" );
-});
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
+const bookingRoute = require("./routes/bookingRoutes");
 
-const port=process.env.PORT || 3000
+// Connect to MongoDB
+mongoose.connect(process.env.DBCONNECTION)
+  .then(() => {
+    console.log("DB Successfully Connected");
+  })
+  .catch((error) => {
+    console.error("Database connection error:", error);
+  });
+
+
+// Use CORS and body-parser middlewares
 app.use(cors());
-// body-parser middleware
-app.use(bodyparser.urlencoded({extended: true}))
-app.use(bodyparser.json())
-app.use("/Bookings",userRoute);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.listen(port,()=>{
-    console.log(`Server run on ${port}`)
-})
+// Use routes
+app.use("/bookings", bookingRoute);
+
+// Start the server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

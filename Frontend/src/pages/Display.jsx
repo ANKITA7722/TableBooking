@@ -6,7 +6,7 @@ const Display = () => {
   const [myData, setMyData] = useState([]);
 
   const loadData = async () => {
-    let api = "http://localhost:9000/Bookings/Bookingdisplay";
+    let api = "http://localhost:9000/bookings/bookingdisplay";
     try {
       const response = await axios.get(api);
       setMyData(response.data);
@@ -19,7 +19,7 @@ const Display = () => {
     loadData();
   }, []);
 
-  const tableRows = myData.map((booking, index) => (
+  const ans = myData.map((booking, index) => (
     <tr key={index}>
       <td>{booking.name}</td>
       <td>{booking.email}</td>
@@ -48,7 +48,7 @@ const Display = () => {
             <th>Message</th>
           </tr>
         </thead>
-        <tbody>{tableRows}</tbody>
+        <tbody>{ans}</tbody>
       </Table>
     </center>
   );

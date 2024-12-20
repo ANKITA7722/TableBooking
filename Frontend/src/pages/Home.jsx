@@ -44,10 +44,10 @@ const Home = () => {
 
   return (
     <>
-      <div>
+      <div id='Header'>
         <Carousel>
           <Carousel.Item>
-            <img src={A} width="1550" height="680" alt="Slide 1" />
+            <img src={A} width="1550" height="700" alt="Slide 1" />
             <Carousel.Caption className="carousel-caption">
               <h3>Welcome to Our Restaurant Service</h3>
               <p>Your comfort is our priority.</p>
@@ -59,7 +59,7 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img src={B} width="1550" height="680" alt="Slide 2" />
+            <img src={B} width="1550" height="700" alt="Slide 2" />
             <Carousel.Caption className="carousel-caption">
               <h3>Enjoy Our Exquisite Menu</h3>
               <p>Book a table for an unforgettable experience.</p>
@@ -71,7 +71,7 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img src={C} width="1550" height="680" alt="Slide 3" />
+            <img src={C} width="1550" height="700" alt="Slide 3" />
             <Carousel.Caption className="carousel-caption">
               <h3>Reserve Your Table Today</h3>
               <p>Experience the best service and cuisine.</p>
@@ -105,12 +105,7 @@ const Home = () => {
           <p>OUR MENU</p>
           <h1>Our Popular Food Items</h1>
         </div>
-        {/* {[d, e, f, g, h, i, j, k].map((image, index) => (
-          <div className={`d${index + 2}`} key={index}>
-            <img src={image} alt={`Food item ${index + 1}`} />
-            <h3>{`Food Item ${index + 1}`}</h3>
-          </div>
-        ))} */}
+       
         <div>
           <img src={d}/>
           <h4>Egg And Cocumber</h4>

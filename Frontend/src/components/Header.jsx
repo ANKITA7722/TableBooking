@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top" style={{marginBottom:"20px"}}>
       <Container>
         <Navbar.Brand as={Link} to="/home">SheyRooms</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
